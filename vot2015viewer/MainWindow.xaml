@@ -1,0 +1,59 @@
+﻿<Window x:Class="Show_ground_truth_box.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Show_ground_truth_box"
+        mc:Ignorable="d"
+        Title="Vot2015 Viewer" SizeToContent="WidthAndHeight" KeyDown="MainWindow_OnKeyDown">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Canvas Grid.Row="0" Name="Canvas"></Canvas>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Name="PrevButton" Content="Previous" IsEnabled="False" Click="PrevButton_OnClick" ></Button>
+            <Button Name="NextButton" Content="Next" IsEnabled="False" Click="NextButton_OnClick"></Button>
+            <Label Name="IndexLabel"></Label>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Name="PathTextBox" MinWidth="300" TextChanged="PathTextBox_OnTextChanged">
+                <TextBox.Style>
+                    <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="Path to groundtruth.txt" Foreground="LightGray" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <Button Grid.Column="1" Name="LoadImagesButton" Content="Load" IsEnabled="False" Click="LoadImagesButton_OnClick"></Button>
+            <Button Grid.Column="2" Name="BrowseGroundTruthButton" Content="Browse" Click="BrowseGroundTruthButton_OnClick"></Button>
+        </Grid>
+    </Grid>
+</Window>
