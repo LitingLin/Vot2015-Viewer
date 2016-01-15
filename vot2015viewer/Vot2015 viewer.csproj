@@ -7,8 +7,8 @@
     <ProjectGuid>{15B33194-1E89-4E93-94DB-5E970E1DF986}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Show_ground_truth_box</RootNamespace>
-    <AssemblyName>Show ground truth box</AssemblyName>
+    <RootNamespace>Vot2015_Viewer</RootNamespace>
+    <AssemblyName>Vot2015 Viewer</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

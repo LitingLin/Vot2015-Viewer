@@ -18,7 +18,7 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using Path = System.Windows.Shapes.Path;
 
-namespace Show_ground_truth_box
+namespace Vot2015_Viewer
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
